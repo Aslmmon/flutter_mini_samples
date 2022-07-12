@@ -18,7 +18,7 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.onBoardingRoute:
-        return MaterialPageRoute(builder: (_) => const OnBoardingScreenApp());
+        return MaterialPageRoute(builder: (_) =>  OnBoardingScreenApp());
       default:
         return undefinedRoute();
     }
