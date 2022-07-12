@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/app_resources/strings_manager.dart';
-import 'package:untitled/onBoardingApp/onBoardingScreensApp.dart';
+import 'package:untitled/onBoardingApp/presentation/onBoardingScreensApp.dart';
 
 class Routes {
   static const String splashRoute = "/";

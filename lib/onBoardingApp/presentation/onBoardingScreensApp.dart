@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
-class OnBoardingScreenApp extends StatefulWidget {
+class OnBoardingScreenApp extends StatelessWidget {
   const OnBoardingScreenApp({Key? key}) : super(key: key);
 
-
-
-  @override
-  State<OnBoardingScreenApp> createState() => _OnBoardingScreenAppState();
-}
-
-class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -18,5 +11,4 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
       ),
     );
   }
-
 }
