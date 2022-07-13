@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,10 +17,12 @@ class OnBoardingScreenApp extends StatefulWidget {
 class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
   final onBoardingViewModel = Get.find<OnBoardingViewModel>();
 
+  int pageIndex = 0;
+  final pageController = PageController();
+
   @override
   void initState() {
     onBoardingViewModel.providerOnBoardingList();
-
     super.initState();
   }
 
@@ -28,38 +32,19 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
       body: SafeArea(
         child: Column(
           children: [
-            Obx(() => Expanded(
-                  child: PageView.builder(
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          _buildPage(
-                              onBoardingViewModel.getSelectedOnBoardingItem()),
-                          DotsIndicator(
-                              dotsCount: onBoardingViewModel
-                                  .getOnBoardingList()
-                                  .length,
-                              position: onBoardingViewModel
-                                  .starterOnBoardingIndex.value
-                                  .toDouble())
-                        ],
-                      );
-                    },
-                    itemCount: onBoardingViewModel
-                        .getOnBoardingList()
-                        .length, // Can be null
+            Obx(() =>
+                Flexible(
+                  child: PageView(
+                    scrollDirection: Axis.horizontal,
+                    controller: pageController,
+                    children: onBoardingViewModel.onBoardingList
+                        .map((element) => _buildPage(element))
+                        .toList(),
+                    onPageChanged: (index) =>
+                        onBoardingViewModel.setIndicatorPoint(index);
+                    , // Can be null
                   ),
                 )),
-            Container(
-              height: 55,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    color: ColorManager.redColor,
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(5))),
-              child: const Center(child: Text("SKIP")),
-            )
           ],
         ),
       ),
@@ -68,9 +53,28 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
 
   Widget _buildPage(OnBoardingData selectedItem) {
     return Column(children: [
-      Image.asset(selectedItem.imagePath),
+      // Image.asset(selectedItem.imagePath),
       Text(selectedItem.title),
       Text(selectedItem.subtitle),
+      DotsIndicator(
+        dotsCount: onBoardingViewModel
+            .getOnBoardingList()
+            .length,
+        position: onBoardingViewModel.starterOnBoardingIndex.value.toDouble(),
+      )
     ]);
   }
+}
+
+/**
+ * This for Making PageView scrollable in Desktop
+ */
+
+class AppScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices =>
+      {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }

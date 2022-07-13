@@ -5,9 +5,8 @@ class OnBoardingViewModel extends GetxController {
   final onBoardingList = <OnBoardingData>[].obs;
   final starterOnBoardingIndex = 0.obs;
 
-  incrementOnBoarding() => starterOnBoardingIndex.value++;
-
-  decrementOnBoarding() => starterOnBoardingIndex.value--;
+  setIndicatorPoint(int trackerDot) =>
+      starterOnBoardingIndex.value = trackerDot;
 
   providerOnBoardingList() {
     onBoardingList.addAll([

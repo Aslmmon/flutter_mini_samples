@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      scrollBehavior: AppScrollBehavior(),
       title: AppStrings.AppNameOnBoarding,
       theme: getApplicationTheme(),
       initialBinding: AppBindings(),
