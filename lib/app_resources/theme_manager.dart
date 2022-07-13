@@ -11,6 +11,7 @@ ThemeData getApplicationTheme() {
    * Theme Data
    */
   return ThemeData(
+    fontFamily: "OpenSans",
       primaryColor: ColorManager.primary,
       primaryColorLight: ColorManager.primary,
       disabledColor: ColorManager.fadedGrey,

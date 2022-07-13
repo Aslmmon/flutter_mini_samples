@@ -46,13 +46,12 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
                   ),
                 )),
             Container(
-              width: double.infinity,
+                width: double.infinity,
                 height: AppSizes.s50,
                 decoration: BoxDecoration(
-                  color: ColorManager.fadedGrey,
+                  color: ColorManager.fadedGrey.withOpacity(0.3),
                 ),
-                child:  const Center(child: Text(AppStrings.skipTitle))
-            )
+                child: const Center(child: Text(AppStrings.skipTitle)))
           ],
         ),
       ),
