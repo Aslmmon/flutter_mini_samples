@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:untitled/onBoardingApp/presentation/onBoardingViewModel.dart';
+import 'package:untitled/onBoardingApp/presentation/onBoarding/onBoardingViewModel.dart';
 
 class AppBindings implements Bindings {
 // default dependency

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:untitled/app_resources/assets_manager.dart';
 import 'package:untitled/onBoardingApp/domain/model/OnBoardingData.dart';
 
 class OnBoardingViewModel extends GetxController {
@@ -11,12 +12,12 @@ class OnBoardingViewModel extends GetxController {
   providerOnBoardingList() {
     onBoardingList.addAll([
       OnBoardingData(
-          title: 'Add', imagePath: '', subtitle: 'Easily add all your bottles'),
+          title: 'Add', imagePath: ImageAssets.onBoardingOne, subtitle: 'Easily add all your bottles'),
       OnBoardingData(
-          title: 'Track', imagePath: '', subtitle: 'See hoe many you need'),
+          title: 'Track', imagePath: ImageAssets.onBoardingTwo, subtitle: 'See hoe many you need'),
       OnBoardingData(
           title: 'Share',
-          imagePath: '',
+          imagePath: ImageAssets.onBoardingThree,
           subtitle: 'Automatically update your social network when you drink')
     ]);
   }
