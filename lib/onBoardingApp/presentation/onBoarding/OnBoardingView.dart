@@ -1,19 +1,21 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:untitled/app_resources/color_manager.dart';
 import 'package:untitled/app_resources/values_manager.dart';
 import 'package:untitled/onBoardingApp/presentation/onBoarding/onBoardingViewModel.dart';
 
 class OnBoardingView extends StatelessWidget {
   final OnBoardingData onBoardingData;
-  final OnBoardingViewModel onBoardingViewModel;
+  // final OnBoardingViewModel onBoardingViewModel;
 
-  const OnBoardingView(
-      {required this.onBoardingData, required this.onBoardingViewModel});
+  const OnBoardingView({required this.onBoardingData});
 
   @override
   Widget build(BuildContext context) {
+    final onBoardingViewModel = Get.find<OnBoardingViewModel>();
+
     return Column(children: [
       const SizedBox(height: AppPaddings.p20),
       SvgPicture.asset(
@@ -31,7 +33,8 @@ class OnBoardingView extends StatelessWidget {
           textAlign: TextAlign.center,
           style: const TextStyle(fontSize: AppSizes.s12)),
       const SizedBox(height: AppPaddings.p16),
-      DotsIndicator(
+
+      Obx(() => DotsIndicator(
           dotsCount: onBoardingViewModel.getOnBoardingList().length,
           position: onBoardingViewModel.starterOnBoardingIndex.value.toDouble(),
           decorator: DotsDecorator(
@@ -45,7 +48,7 @@ class OnBoardingView extends StatelessWidget {
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
             activeColor: ColorManager.primary,
-          ))
+          )))
     ]);
   }
 }

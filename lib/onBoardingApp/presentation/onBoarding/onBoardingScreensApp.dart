@@ -38,11 +38,9 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
                     controller: pageController,
                     children: onBoardingViewModel.onBoardingList
                         .map((element) => OnBoardingView(
-                            onBoardingData: element,
-                            onBoardingViewModel: onBoardingViewModel))
+                            onBoardingData: element))
                         .toList(),
-                    onPageChanged: (index) => onBoardingViewModel
-                        .setIndicatorPoint(index), // Can be null
+                    onPageChanged: (index) => onBoardingViewModel.setIndicatorPoint(index), // Can be null
                   ),
                 )),
             Container(

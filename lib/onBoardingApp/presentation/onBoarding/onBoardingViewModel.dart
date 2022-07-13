@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:untitled/app_resources/assets_manager.dart';
 import 'package:untitled/app_resources/strings_manager.dart';
@@ -7,9 +8,12 @@ class OnBoardingViewModel extends GetxController {
   final onBoardingList = <OnBoardingData>[].obs;
   final starterOnBoardingIndex = 0.obs;
 
-  setIndicatorPoint(int trackerDot) =>
-      starterOnBoardingIndex.value = trackerDot;
+  setIndicatorPoint(int trackerDot) {
+      debugPrint(trackerDot.toString());
+    starterOnBoardingIndex.value = trackerDot;
+      debugPrint(starterOnBoardingIndex.value.toString());
 
+  }
   providerOnBoardingList() {
     onBoardingList.addAll([
       OnBoardingData(
@@ -27,8 +31,6 @@ class OnBoardingViewModel extends GetxController {
     ]);
   }
 
-  OnBoardingData getSelectedOnBoardingItem() =>
-      onBoardingList[starterOnBoardingIndex.value];
 
   List<OnBoardingData> getOnBoardingList() => onBoardingList.value;
 }
