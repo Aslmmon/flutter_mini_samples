@@ -13,13 +13,13 @@ ThemeData getApplicationTheme() {
   return ThemeData(
       primaryColor: ColorManager.primary,
       primaryColorLight: ColorManager.primary,
-      disabledColor: ColorManager.grey,
+      disabledColor: ColorManager.fadedGrey,
       splashColor: ColorManager.darkGrey,
       //Ripple Effect
       /**
        * card Theme
        */
-      cardTheme: CardTheme(color: ColorManager.grey, elevation: AppSizes.s8),
+      cardTheme: CardTheme(color: ColorManager.fadedGrey, elevation: AppSizes.s8),
       /**
        * AppBar Theme
        */
@@ -69,7 +69,7 @@ ThemeData getApplicationTheme() {
               color: ColorManager.redColor, fontSize: AppSizes.s8),
           enabledBorder: OutlineInputBorder(
               borderSide:
-                  BorderSide(color: ColorManager.grey, width: AppSizes.s8),
+                  BorderSide(color: ColorManager.fadedGrey, width: AppSizes.s8),
               borderRadius:
                   const BorderRadius.all(Radius.circular(AppSizes.s8))),
           focusedBorder: OutlineInputBorder(

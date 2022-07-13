@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
+import 'package:untitled/app_resources/color_manager.dart';
+import 'package:untitled/app_resources/strings_manager.dart';
+import 'package:untitled/app_resources/values_manager.dart';
 import 'package:untitled/onBoardingApp/presentation/onBoarding/OnBoardingView.dart';
 import 'package:untitled/onBoardingApp/presentation/onBoarding/onBoardingViewModel.dart';
 
@@ -42,6 +45,14 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
                         .setIndicatorPoint(index), // Can be null
                   ),
                 )),
+            Container(
+              width: double.infinity,
+                height: AppSizes.s50,
+                decoration: BoxDecoration(
+                  color: ColorManager.fadedGrey,
+                ),
+                child:  const Center(child: Text(AppStrings.skipTitle))
+            )
           ],
         ),
       ),
