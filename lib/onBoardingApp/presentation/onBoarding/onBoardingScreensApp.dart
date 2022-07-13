@@ -31,8 +31,10 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
     return Scaffold(
       body: SafeArea(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Obx(() => Flexible(
+              flex: 2,
                   child: PageView(
                     scrollDirection: Axis.horizontal,
                     controller: pageController,
