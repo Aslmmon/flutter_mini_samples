@@ -2,18 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:untitled/app_resources/assets_manager.dart';
 import 'package:untitled/app_resources/strings_manager.dart';
-import 'package:untitled/onBoardingApp/domain/model/OnBoardingData.dart';
 
 class OnBoardingViewModel extends GetxController {
   final onBoardingList = <OnBoardingData>[].obs;
   final starterOnBoardingIndex = 0.obs;
+  var isLastItemOnBoarding = false.obs;
 
   setIndicatorPoint(int trackerDot) {
-      debugPrint(trackerDot.toString());
+    debugPrint(trackerDot.toString());
     starterOnBoardingIndex.value = trackerDot;
-      debugPrint(starterOnBoardingIndex.value.toString());
-
+    isLastItemOnBoarding.value = starterOnBoardingIndex.value == onBoardingList.length -1;
   }
+
   providerOnBoardingList() {
     onBoardingList.addAll([
       OnBoardingData(
@@ -30,7 +30,6 @@ class OnBoardingViewModel extends GetxController {
           subtitle: AppStrings.onBoardingSubtitle3)
     ]);
   }
-
 
   List<OnBoardingData> getOnBoardingList() => onBoardingList.value;
 }

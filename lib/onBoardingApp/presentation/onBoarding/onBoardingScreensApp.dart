@@ -37,10 +37,11 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
                     scrollDirection: Axis.horizontal,
                     controller: pageController,
                     children: onBoardingViewModel.onBoardingList
-                        .map((element) => OnBoardingView(
-                            onBoardingData: element))
+                        .map((element) =>
+                            OnBoardingView(onBoardingData: element))
                         .toList(),
-                    onPageChanged: (index) => onBoardingViewModel.setIndicatorPoint(index), // Can be null
+                    onPageChanged: (index) => onBoardingViewModel
+                        .setIndicatorPoint(index), // Can be null
                   ),
                 )),
             Container(
@@ -49,7 +50,10 @@ class _OnBoardingScreenAppState extends State<OnBoardingScreenApp> {
                 decoration: BoxDecoration(
                   color: ColorManager.fadedGrey.withOpacity(0.3),
                 ),
-                child: const Center(child: Text(AppStrings.skipTitle)))
+                child: Center(
+                    child: Obx(() => Text(onBoardingViewModel.isLastItemOnBoarding.value
+                        ? AppStrings.startTitle
+                        : AppStrings.skipTitle))))
           ],
         ),
       ),

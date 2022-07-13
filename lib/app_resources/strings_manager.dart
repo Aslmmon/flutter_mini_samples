@@ -13,4 +13,6 @@ class AppStrings {
       "Automatically update your social networks when you  \ndrink one of your white water";
 
   static const skipTitle = "SKIP";
+  static const startTitle = "START YOUR CELLR";
+
 }
