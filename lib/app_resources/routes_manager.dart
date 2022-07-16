@@ -1,8 +1,8 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/app_resources/strings_manager.dart';
 import 'package:untitled/onBoardingApp/presentation/onBoarding/onBoardingScreensApp.dart';
+import 'package:untitled/splash/SplashScreen.dart';
 
 class Routes {
   static const String splashRoute = "/";
@@ -18,7 +18,9 @@ class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.onBoardingRoute:
-        return MaterialPageRoute(builder: (_) =>  OnBoardingScreenApp());
+        return MaterialPageRoute(builder: (_) => const OnBoardingScreenApp());
+      case Routes.splashRoute:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
       default:
         return undefinedRoute();
     }

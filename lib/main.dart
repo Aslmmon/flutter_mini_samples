@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: getApplicationTheme(),
       initialBinding: AppBindings(),
       onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.onBoardingRoute,
+      initialRoute: Routes.splashRoute,
     );
   }
 }
