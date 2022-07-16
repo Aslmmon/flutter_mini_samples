@@ -1,21 +1,23 @@
-# untitled
+# Miscellanous flutter Samples
 
-A new Flutter project.
+## What is this project about ? :thinking:
+```diff
+@@This project containing Samples of multiple features developed in Dart Langauge / Flutter@@ 
+```
 
-## Getting Started
+
+## Aim project ?  :thinking:
+Anything learnt new in flutter whether new Archeticture / Widgets / Features should be all put in this project as Open Source for anyone to use or me to have already made templates i can customize according to future projects  :partying_face:
 
 
+<p>
+<img src="https://github.com/Aslmmon/flutter_mini_samples/blob/main/assets/portfolio/onboarding.gif"  width="200" height="450" />
+  
+   <em> ** onBoarding Feature ** </em>
+</p>
 
+## How to use ?
+you will find project is customized into different modules named with it's specific relative feature . 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
 
