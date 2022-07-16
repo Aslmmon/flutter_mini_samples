@@ -16,6 +16,13 @@ Anything learnt new in flutter whether new Archeticture / Widgets / Features sho
    <em> ** onBoarding Feature ** </em>
 </p>
 
+<p>
+<img src="https://github.com/Aslmmon/flutter_mini_samples/blob/main/assets/portfolio/splash_anim.gif"  width="200" height="450" />
+
+   <em> ** Splash Animated Feature ** </em>
+</p>
+
+
 ## How to use ?
 you will find project is customized into different modules named with it's specific relative feature . 
 
