@@ -11,10 +11,11 @@ class IntroScreen extends StatelessWidget {
         children: List.generate(
             5,
             (index) => Image.asset(
-                  "images/iphone-valprop-$index@3x.png",
+                  "assets/images/iphone-valprop-$index@3x.png",
                   fit: BoxFit.cover,
                   alignment: Alignment.center,
                 )),
+
       )
     ]);
   }
