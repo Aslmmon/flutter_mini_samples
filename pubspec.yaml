@@ -66,6 +66,7 @@ flutter:
      - assets/images/first_onboarding.svg
      - assets/images/second_onboarding.svg
      - assets/images/third_onboarding.svg
+     - assets/images/
      - assets/animation/
   fonts:
      - family: OpenSans
