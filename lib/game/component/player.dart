@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class Player extends PositionComponent with HasHitboxes,Collidable{
   static const int squareSpeed = 250;
+
   static final squarePaint = BasicPalette.blue.paint();
   static const squareWidth = 100.0, squareHeight = 100.0;
   //late Rect squarePos;
