@@ -24,9 +24,11 @@ class GoldRush extends FlameGame with HasCollidables,HasDraggables, HasTappables
   Future<void> onLoad() async {
     super.onLoad();
     // add(Player());
-    add(HudComponent());
+    var hud = HudComponent();
+  //  add(HudComponent());
     add(Background());
     add(George(
+      hud: hud,
         position: Vector2(200, 400), size: Vector2(48.0, 48.0), speed: 40.0));
     add(zombie(
         position: Vector2(100, 200), size: Vector2(32.0, 64.0), speed: 20.0));
@@ -38,5 +40,6 @@ class GoldRush extends FlameGame with HasCollidables,HasDraggables, HasTappables
     add(skeleton(
         position: Vector2(300, 600), size: Vector2(32.0, 64.0), speed: 60.0));
     add(ScreenCollidable());
+    add(hud);
   }
 }

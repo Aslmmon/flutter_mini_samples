@@ -2,8 +2,9 @@ import 'package:flame/flame.dart';
 import 'package:flame/geometry.dart';
 import 'package:flame/sprite.dart';
 import 'package:untitled/game/component/character.dart';
+import 'package:untitled/game/component/character_enemy.dart';
 
-class zombie extends Character {
+class zombie extends EnemyCharacter {
   zombie({required super.position, required super.size, required super.speed});
 
   @override

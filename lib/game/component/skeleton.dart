@@ -3,10 +3,11 @@
 import 'package:flame/flame.dart';
 import 'package:flame/geometry.dart';
 import 'package:flame/sprite.dart';
+import 'package:untitled/game/component/character_enemy.dart';
 
 import 'character.dart';
 
-class skeleton extends Character {
+class skeleton extends EnemyCharacter {
   skeleton({required super.position, required super.size, required super.speed});
 
 

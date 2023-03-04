@@ -25,8 +25,7 @@ class HudComponent extends PositionComponent {
       joystickKnobPaint),
       background: CircleComponent(radius: 40.0, paint:
       joystickBackgroundPaint),
-      margin: const EdgeInsets.only(left
-          : 40, bottom: 40),);
+      margin: const EdgeInsets.only(left: 40, bottom: 40),);
     runButton = RunButton(
         button: CircleComponent(radius: 25.0, paint:
         buttonRunPaint),
