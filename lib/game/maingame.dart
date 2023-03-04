@@ -8,6 +8,7 @@ import 'package:untitled/game/component/skeleton.dart';
 import 'package:untitled/game/component/zombie.dart';
 
 import 'component/background.dart';
+import 'component/hud/hud.dart';
 import 'component/player.dart';
 
 void main() async {
@@ -18,11 +19,12 @@ void main() async {
   runApp(GameWidget(game: goldRush));
 }
 
-class GoldRush extends FlameGame with HasCollidables {
+class GoldRush extends FlameGame with HasCollidables,HasDraggables, HasTappables {
   @override
   Future<void> onLoad() async {
     super.onLoad();
     // add(Player());
+    add(HudComponent());
     add(Background());
     add(George(
         position: Vector2(200, 400), size: Vector2(48.0, 48.0), speed: 40.0));
