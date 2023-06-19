@@ -71,6 +71,8 @@ flutter:
      - assets/animation/
      - assets/images/george.png
      - assets/images/zombie_n_skeleton.png
+     - assets/
+
   fonts:
      - family: OpenSans
        fonts:
