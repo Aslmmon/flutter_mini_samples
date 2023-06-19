@@ -40,6 +40,8 @@ dependencies:
   dots_indicator: ^2.1.0
   flutter_svg: ^1.1.1+1
   flame: 1.0.0
+  google_fonts: ^3.0.0
+
 #  json_annotation: ^4.6.0
 
 dev_dependencies:
