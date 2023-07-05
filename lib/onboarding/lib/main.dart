@@ -17,13 +17,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    /**
+     * change Route for Splash or OnBoarding
+     * Splash  ->> : Routes.splashRoute
+     * onBoarding  ->> : Routes.onBoarding
+     */
     return GetMaterialApp(
       scrollBehavior: AppScrollBehavior(),
       title: AppStrings.AppNameOnBoarding,
       theme: getApplicationTheme(),
       initialBinding: AppBindings(),
       onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.onBoardingRoute,
+      initialRoute: Routes.splashRoute,
     );
   }
 }
