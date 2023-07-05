@@ -6,6 +6,8 @@ import 'package:untitled/app_resources/theme_manager.dart';
 import 'package:untitled/onBoardingApp/presentation/di/dependency_injection.dart';
 import 'package:untitled/onBoardingApp/presentation/onBoarding/onBoardingScreensApp.dart';
 import 'onBoardingApp/presentation/di/dependency_injection.dart';
+import 'onboarding/lib/presentation/di/dependency_injection.dart';
+import 'onboarding/lib/presentation/onBoarding/onBoardingScreensApp.dart';
 void main() {
   runApp(const MyApp());
 }
