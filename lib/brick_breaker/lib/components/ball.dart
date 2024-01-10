@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:brick_app/components/bat.dart';
 import 'package:brick_app/components/play_area.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
@@ -44,7 +45,12 @@ class Ball extends CircleComponent with CollisionCallbacks ,HasGameReference<Bri
       } else if (intersectionPoints.first.y >= game.height) {
         removeFromParent();
       }
-    } else {
+    } else if (other is Bat) {
+      velocity.y = -velocity.y;
+      velocity.x = velocity.x +
+          (position.x - other.position.x) / other.size.x * game.width * 0.3;
+    }
+    else {
       debugPrint('collision with $other');
     }
   }
