@@ -10,7 +10,8 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        child: Lottie.asset(AnimationAssets.splashAnimation,width:double.infinity,fit: BoxFit.fill),
+        child: Lottie.asset(AnimationAssets.splashAnimation,
+            width: double.infinity, fit: BoxFit.fill),
       )),
     );
   }

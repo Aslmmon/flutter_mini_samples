@@ -11,12 +11,9 @@ class RecipesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-// 2
     return FutureBuilder(
-      // 3
       future: exploreService.getRecipes(),
       builder: (context, AsyncSnapshot<List<SimpleRecipe>> snapshot) {
-// 4
         if (snapshot.connectionState == ConnectionState.done) {
           return RecipesGridView(recipes: snapshot.data ?? []);
         } else {
