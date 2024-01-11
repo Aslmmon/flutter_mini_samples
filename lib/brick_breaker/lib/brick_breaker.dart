@@ -8,12 +8,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'components/ball.dart';
 import 'components/bat.dart';
+import 'components/brick.dart';
 import 'components/play_area.dart';
 import 'config.dart';
-import 'dart:math' as math; // Add this import
-import 'package:flutter/material.dart';                         // And this import
-import 'package:flutter/services.dart';
-import 'package:flame/events.dart';                             // Add this import
+import 'dart:math' as math;
+import 'package:flutter/material.dart';
+import 'package:flame/events.dart';
 
 class BrickBreaker extends FlameGame   with HasCollisionDetection,KeyboardEvents {
   BrickBreaker() : super(
@@ -36,21 +36,36 @@ class BrickBreaker extends FlameGame   with HasCollisionDetection,KeyboardEvents
     world.add(PlayArea());
 
     world.add(Ball(
+        difficultyModifier: difficultyModifier,
         radius: ballRadius,
         position: size / 2,
         velocity: Vector2((rand.nextDouble() - 0.5) * width, height * 0.2).normalized()..scale(height / 4)));
-    debugMode = true;                                           // To here.
+    debugMode = true;
 
 
-    world.add(Bat(                                              // Add from here...
+    world.add(Bat(
         size: Vector2(batWidth, batHeight),
         cornerRadius: const Radius.circular(ballRadius / 2),
-        position: Vector2(width / 2, height * 0.95)));          // To here
+        position: Vector2(width / 2, height * 0.95)));
+
+
+
+    await world.addAll([
+      for (var i = 0; i < brickColors.length; i++)
+        for (var j = 1; j <= 5; j++)
+          Brick(
+            Vector2(
+              (i + 0.5) * brickWidth + (i + 1) * brickGutter,
+              (j + 2.0) * brickHeight + j * brickGutter,
+            ),
+            brickColors[i],
+          ),
+    ]);
 
 
   }
 
-  @override                                                     // Add from here...
+  @override
   KeyEventResult onKeyEvent(
       RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     super.onKeyEvent(event, keysPressed);
