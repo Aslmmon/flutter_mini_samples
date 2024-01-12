@@ -4,6 +4,7 @@ import 'package:brick_app/components/bat.dart';
 import 'package:brick_app/components/play_area.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flame/effects.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../brick_breaker.dart';
@@ -46,7 +47,11 @@ class Ball extends CircleComponent
       } else if (intersectionPoints.first.x >= game.width) {
         velocity.x = -velocity.x;
       } else if (intersectionPoints.first.y >= game.height) {
-        removeFromParent();
+        add(RemoveEffect(
+            delay: 0.35,
+            onComplete: () {                                    // Modify from here
+              game.playState = PlayState.gameOver;
+            }));
       }
       /// collision with Bat
     } else if (other is Bat) {
